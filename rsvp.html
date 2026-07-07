@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RSVP — Alex & Ali</title>
-<meta name="description" content="RSVP to Alex & Ali's wedding — Köln or Puerto Escondido.">
+<title>Save the Date — Alex & Ali</title>
+<meta name="description" content="Save the date for Alex & Ali's wedding — Köln or Puerto Escondido.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -15,14 +15,13 @@
 <header class="hero">
   <div class="wrap">
     <a class="back-link" href="index.html">← Back</a>
-    <p class="eyebrow">Wedding RSVP</p>
+    <p class="eyebrow">Save the Date</p>
     <h1>Let us know</h1>
     <p class="lede">
-      Hi friend, we're so excited to celebrate with you next year. We're
-      collecting non-binding responses to help us plan — here's the basic
-      info. We'll have two celebrations to make it easier for friends and
-      family to attend, so choose whichever works best for you. If you'd
-      like to celebrate with us twice, feel free — but please, no pressure!
+      We're so excited to celebrate with you next year. We're collecting
+      non-binding responses to help us plan. Choose whichever celebration
+      works best for you. If you'd like to celebrate with us twice, feel
+      free, but please, no pressure!
     </p>
   </div>
 </header>
@@ -50,13 +49,15 @@
 
       <div class="field">
         <label for="celebration">Which celebration would you like to attend? *</label>
-        <select id="celebration" name="celebration" required>
-          <option value="" disabled selected>Choose one</option>
-          <option value="koln">Köln</option>
-          <option value="puerto">Puerto Escondido</option>
-          <option value="both">Both</option>
-          <option value="none">Can't make it</option>
-        </select>
+        <div class="select-wrap">
+          <select id="celebration" name="celebration" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="koln">Köln</option>
+            <option value="puerto">Puerto Escondido</option>
+            <option value="both">Both</option>
+            <option value="none">Can't make it</option>
+          </select>
+        </div>
       </div>
 
       <fieldset class="field" id="accommodation-field" hidden>
@@ -84,12 +85,12 @@
           I'll book my own place! (we can still help you find it)
         </label>
         <label class="radio-option">
-          <input type="radio" name="accommodation" value="other">
-          Other
+          <input type="radio" name="accommodation" value="unsure">
+          I'm not sure yet
         </label>
       </fieldset>
 
-      <div class="field checkbox-field">
+      <div class="field checkbox-field" id="oaxaca-field" hidden>
         <p class="section-heading">Day of the Dead Anyone?</p>
         <p class="field-note">
           Are you feeling extra? Ali and Alex are going to celebrate Day of
@@ -107,7 +108,7 @@
         <textarea id="comments" name="comments" rows="4"></textarea>
       </div>
 
-      <button type="submit" class="btn" id="submit-btn">Submit RSVP</button>
+      <button type="submit" class="btn" id="submit-btn">Save the Date</button>
       <p class="form-status" id="form-status" role="status"></p>
     </form>
   </section>
