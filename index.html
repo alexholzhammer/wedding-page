@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save the Date — Alex & Ali</title>
+<meta name="description" content="Alex & Ali are getting married! Join us in Köln or Puerto Escondido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="confetti" aria-hidden="true">
+  <span class="c c-tri pink"></span>
+  <span class="c c-dot yellow"></span>
+  <span class="c c-rect blue"></span>
+  <span class="c c-tri purple"></span>
+  <span class="c c-dot mint"></span>
+  <span class="c c-rect pink"></span>
+  <span class="c c-tri yellow"></span>
+  <span class="c c-dot blue"></span>
+  <span class="c c-rect purple"></span>
+  <span class="c c-tri mint"></span>
+  <span class="c c-dot pink"></span>
+  <span class="c c-rect yellow"></span>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">We're getting married!</p>
+    <h1>Save the<br>Date</h1>
+    <p class="names">Alex &amp; Ali</p>
+    <p class="lede">
+      We're excited to celebrate our wedding with you. We're planning two
+      celebrations, so that our friends and family everywhere are included —
+      so please come to whichever one is easiest for you :)
+    </p>
+    <a class="btn" href="#rsvp">RSVP</a>
+  </div>
+</header>
+
+<main>
+  <section class="events wrap" id="events">
+    <div class="event-card">
+      <p class="event-kicker">Celebration one</p>
+      <h2>Köln</h2>
+      <p class="event-date">July 3rd, 2027</p>
+      <p>
+        We'll have a smaller celebration in Alex's beautiful hometown of
+        Köln. If it's easier for you to join us here, please do.
+      </p>
+    </div>
+
+    <div class="event-card">
+      <p class="event-kicker">Celebration two</p>
+      <h2>Puerto Escondido</h2>
+      <p class="event-date">November 6th, 2027</p>
+      <p>
+        If you're able to come, please join us for our beach bash at our
+        chosen home in Puerto Escondido.
+      </p>
+    </div>
+  </section>
+
+  <section class="schedule wrap" id="schedule">
+    <h2 class="section-title">Puerto Weekend Schedule</h2>
+    <ol class="timeline">
+      <li>
+        <span class="day">Friday</span>
+        <span class="date">November 5th, 2027</span>
+        <span class="detail">Evening Pre-Drinks</span>
+      </li>
+      <li>
+        <span class="day">Saturday</span>
+        <span class="date">November 6th, 2027</span>
+        <span class="detail">Wedding Celebration · 4pm til late</span>
+      </li>
+      <li>
+        <span class="day">Sunday</span>
+        <span class="date">November 7th, 2027</span>
+        <span class="detail">Darty Recovery · 2pm til sunset</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="rsvp wrap" id="rsvp">
+    <h2 class="section-title">RSVP</h2>
+    <p class="rsvp-lede">Let us know if you're coming — to Köln, Puerto, or both!</p>
+
+    <!--
+      Tally form embed.
+      Replace REPLACE_WITH_TALLY_FORM_ID below with your real Tally form ID
+      (find it in the Tally embed short code, e.g. tally.so/embed/XXXXXX).
+    -->
+    <div
+      data-tally-src="https://tally.so/embed/REPLACE_WITH_TALLY_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      data-tally-width="100%"
+      data-tally-height="500"
+      data-tally-auto-resize="1"
+      class="tally-embed"
+    ></div>
+    <script src="https://tally.so/widgets/embed.js"></script>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Can't wait to celebrate with you 🎉 — Alex &amp; Ali</p>
+</footer>
+
+</body>
+</html>
