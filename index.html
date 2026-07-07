@@ -89,19 +89,10 @@
     <h2 class="section-title">RSVP</h2>
     <p class="rsvp-lede">Let us know if you're coming — to Köln, Puerto, or both!</p>
 
-    <!--
-      Tally form embed.
-      Replace REPLACE_WITH_TALLY_FORM_ID below with your real Tally form ID
-      (find it in the Tally embed short code, e.g. tally.so/embed/XXXXXX).
-    -->
-    <div
-      data-tally-src="https://tally.so/embed/REPLACE_WITH_TALLY_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-      data-tally-width="100%"
-      data-tally-height="500"
-      data-tally-auto-resize="1"
-      class="tally-embed"
-    ></div>
-    <script src="https://tally.so/widgets/embed.js"></script>
+    <div class="tally-embed">
+      <iframe data-tally-src="https://tally.so/embed/KYyPLD?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1256" frameborder="0" marginheight="0" marginwidth="0" title="Wedding RSVP"></iframe>
+    </div>
+    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
   </section>
 </main>
 
