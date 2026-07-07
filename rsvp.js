@@ -9,6 +9,8 @@ const plusOneNameField = document.getElementById("plus-one-name-field");
 const plusOneNameInput = document.getElementById("plus-one-name");
 const celebrationSelect = document.getElementById("celebration");
 const accommodationField = document.getElementById("accommodation-field");
+const oaxacaField = document.getElementById("oaxaca-field");
+const oaxacaLoopInput = document.getElementById("oaxaca-loop");
 const submitBtn = document.getElementById("submit-btn");
 const status = document.getElementById("form-status");
 
@@ -19,19 +21,23 @@ plusOneToggle.addEventListener("change", () => {
   }
 });
 
-function updateAccommodationVisibility() {
-  const showAccommodation = ["puerto", "both"].includes(celebrationSelect.value);
-  accommodationField.hidden = !showAccommodation;
+function updatePuertoFieldsVisibility() {
+  const showPuertoFields = ["puerto", "both"].includes(celebrationSelect.value);
+
+  accommodationField.hidden = !showPuertoFields;
   accommodationField
     .querySelectorAll("input[name='accommodation']")
     .forEach((input) => {
-      input.required = showAccommodation;
-      if (!showAccommodation) input.checked = false;
+      input.required = showPuertoFields;
+      if (!showPuertoFields) input.checked = false;
     });
+
+  oaxacaField.hidden = !showPuertoFields;
+  if (!showPuertoFields) oaxacaLoopInput.checked = false;
 }
 
-celebrationSelect.addEventListener("change", updateAccommodationVisibility);
-updateAccommodationVisibility();
+celebrationSelect.addEventListener("change", updatePuertoFieldsVisibility);
+updatePuertoFieldsVisibility();
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -43,7 +49,7 @@ form.addEventListener("submit", async (e) => {
     plus_one_name: plusOneToggle.checked ? formData.get("plusOneName") : null,
     celebration: formData.get("celebration"),
     accommodation: accommodationField.hidden ? null : formData.get("accommodation"),
-    oaxaca_loop: document.getElementById("oaxaca-loop").checked,
+    oaxaca_loop: oaxacaField.hidden ? false : oaxacaLoopInput.checked,
     comments: formData.get("comments"),
   };
 
@@ -67,9 +73,9 @@ form.addEventListener("submit", async (e) => {
 
     form.reset();
     plusOneNameField.hidden = true;
-    updateAccommodationVisibility();
+    updatePuertoFieldsVisibility();
     status.classList.add("success");
-    status.textContent = "Thanks! We've got your RSVP.";
+    status.textContent = "Thanks! We've got your response.";
   } catch (err) {
     status.classList.add("error");
     status.textContent = "Something went wrong — please try again or message us directly.";
