@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSVP — Alex & Ali</title>
+<meta name="description" content="RSVP to Alex & Ali's wedding — Köln or Puerto Escondido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="back-link" href="index.html">← Back</a>
+    <p class="eyebrow">Wedding RSVP</p>
+    <h1>Let us know</h1>
+    <p class="lede">
+      Hi friend, we're so excited to celebrate with you next year. We're
+      collecting non-binding responses to help us plan — here's the basic
+      info. We'll have two celebrations to make it easier for friends and
+      family to attend, so choose whichever works best for you. If you'd
+      like to celebrate with us twice, feel free — but please, no pressure!
+    </p>
+  </div>
+</header>
+
+<main>
+  <section class="wrap rsvp-section">
+    <form class="form-card" id="rsvp-form" novalidate>
+
+      <div class="field">
+        <label for="name">Your name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="field checkbox-field">
+        <label>
+          <input type="checkbox" id="plus-one-toggle" name="plusOne">
+          Bringing a plus one?
+        </label>
+      </div>
+
+      <div class="field" id="plus-one-name-field" hidden>
+        <label for="plus-one-name">Plus one's name</label>
+        <input type="text" id="plus-one-name" name="plusOneName">
+      </div>
+
+      <div class="field">
+        <label for="celebration">Which celebration would you like to attend? *</label>
+        <select id="celebration" name="celebration" required>
+          <option value="" disabled selected>Choose one</option>
+          <option value="koln">Köln</option>
+          <option value="puerto">Puerto Escondido</option>
+          <option value="both">Both</option>
+          <option value="none">Can't make it</option>
+        </select>
+      </div>
+
+      <fieldset class="field" id="accommodation-field" hidden>
+        <legend class="section-heading">Puerto Escondido Section</legend>
+        <p class="field-note">
+          We plan to help organize accommodation for anybody interested. Let
+          us know your preference. Your choice is non-binding, only for us
+          to get a rough idea what people want. Also, Ali and Alex will stay
+          in Puerto until the end of the year, so feel free to extend your
+          stay.
+        </p>
+        <p class="field-label">What accommodation would you prefer? *</p>
+        <label class="radio-option">
+          <input type="radio" name="accommodation" value="hotel">
+          Hotel: $90–130 per room, a laid-back hotel with a beautiful pool
+          in the heart of La Punta.
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="accommodation" value="villa">
+          Villa: ~$200 per person with all meals and drinks included. Will
+          be at or next to the wedding venue.
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="accommodation" value="own-place">
+          I'll book my own place! (we can still help you find it)
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="accommodation" value="other">
+          Other
+        </label>
+      </fieldset>
+
+      <div class="field checkbox-field">
+        <p class="section-heading">Day of the Dead Anyone?</p>
+        <p class="field-note">
+          Are you feeling extra? Ali and Alex are going to celebrate Day of
+          the Dead in Oaxaca the weekend before the wedding. They plan to be
+          in Oaxaca for most of October leading up to the celebration.
+        </p>
+        <label>
+          <input type="checkbox" id="oaxaca-loop" name="oaxacaLoop">
+          Yes, please keep me in the loop (non-binding)
+        </label>
+      </div>
+
+      <div class="field">
+        <label for="comments">Any questions or comments?</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn" id="submit-btn">Submit RSVP</button>
+      <p class="form-status" id="form-status" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Can't wait to celebrate with you 🎉 — Alex &amp; Ali</p>
+</footer>
+
+<script src="rsvp.js"></script>
+</body>
+</html>

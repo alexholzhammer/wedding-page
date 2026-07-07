@@ -45,6 +45,18 @@ h1, h2 {
   text-align: center;
 }
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: var(--brown);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
 .eyebrow {
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -212,6 +224,122 @@ h1, h2 {
 .timeline .detail {
   grid-column: 1 / -1;
   font-weight: 600;
+}
+
+/* ---------- rsvp form ---------- */
+
+.rsvp-section {
+  padding: 24px 24px 72px;
+}
+
+.form-card {
+  background: #fff;
+  border: 3px solid var(--brown);
+  border-radius: 24px;
+  padding: 32px 26px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field[hidden] {
+  display: none;
+}
+
+.field label,
+.field-label {
+  font-weight: 700;
+  color: var(--brown-dark);
+  margin: 0;
+}
+
+.field input[type="text"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid var(--cream-deep);
+  background: var(--cream);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--brown-dark);
+}
+
+.field input[type="text"]:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--brown);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.checkbox-field label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--brown);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.field-note {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin: 0;
+}
+
+fieldset.field {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--cream-deep);
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.radio-option input {
+  margin-top: 3px;
+}
+
+.form-status {
+  min-height: 1.4em;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-status.success {
+  color: #3f7d4f;
+}
+
+.form-status.error {
+  color: #b0413e;
 }
 
 /* ---------- footer ---------- */
