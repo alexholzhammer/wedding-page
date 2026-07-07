@@ -3,11 +3,7 @@
   --cream-deep: #f2e9d8;
   --brown: #8a5a3b;
   --brown-dark: #5f3d27;
-  --pink: #f2b4c1;
-  --yellow: #f6d365;
-  --blue: #a7d8e8;
-  --purple: #c8b6e2;
-  --mint: #a9d8bd;
+  --font-display: "Bricolage Grotesque", sans-serif;
   --max-width: 780px;
 }
 
@@ -30,7 +26,7 @@ body {
 }
 
 h1, h2 {
-  font-family: "Fredoka", sans-serif;
+  font-family: var(--font-display);
   color: var(--brown);
   margin: 0;
 }
@@ -39,65 +35,7 @@ h1, h2 {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
-  position: relative;
-  z-index: 2;
 }
-
-/* ---------- confetti background ---------- */
-
-.confetti {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.c {
-  position: absolute;
-  opacity: 0.85;
-}
-
-.c-tri {
-  width: 0;
-  height: 0;
-  border-left: 16px solid transparent;
-  border-right: 16px solid transparent;
-  border-bottom: 26px solid currentColor;
-}
-
-.c-rect {
-  width: 22px;
-  height: 30px;
-  border-radius: 4px;
-  background: currentColor;
-  transform: rotate(18deg);
-}
-
-.c-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.pink { color: var(--pink); }
-.yellow { color: var(--yellow); }
-.blue { color: var(--blue); }
-.purple { color: var(--purple); }
-.mint { color: var(--mint); }
-
-.c:nth-child(1) { top: 6%; left: 8%; transform: rotate(-12deg); }
-.c:nth-child(2) { top: 14%; left: 82%; }
-.c:nth-child(3) { top: 28%; left: 4%; transform: rotate(25deg); }
-.c:nth-child(4) { top: 40%; left: 90%; transform: rotate(-20deg); }
-.c:nth-child(5) { top: 52%; left: 12%; }
-.c:nth-child(6) { top: 62%; left: 88%; transform: rotate(40deg); }
-.c:nth-child(7) { top: 74%; left: 6%; }
-.c:nth-child(8) { top: 82%; left: 92%; }
-.c:nth-child(9) { top: 92%; left: 15%; transform: rotate(-30deg); }
-.c:nth-child(10) { top: 20%; left: 50%; }
-.c:nth-child(11) { top: 68%; left: 48%; transform: rotate(15deg); }
-.c:nth-child(12) { top: 96%; left: 70%; }
 
 /* ---------- hero ---------- */
 
@@ -122,8 +60,25 @@ h1, h2 {
   font-weight: 700;
 }
 
+.couple-photo {
+  width: min(280px, 60vw);
+  aspect-ratio: 1 / 1;
+  margin: 28px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid var(--brown);
+  background: var(--cream-deep);
+}
+
+.couple-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .names {
-  font-family: "Fredoka", sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(1.3rem, 4vw, 1.7rem);
   color: var(--brown-dark);
   margin: 14px 0 20px;
@@ -238,7 +193,7 @@ h1, h2 {
 }
 
 .timeline .day {
-  font-family: "Fredoka", sans-serif;
+  font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.25rem;
   color: var(--brown);
@@ -259,35 +214,9 @@ h1, h2 {
   font-weight: 600;
 }
 
-/* ---------- rsvp ---------- */
-
-.rsvp {
-  padding: 24px 24px 72px;
-  text-align: center;
-}
-
-.rsvp-lede {
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-.tally-embed {
-  background: #fff;
-  border: 3px solid var(--brown);
-  border-radius: 24px;
-  padding: 8px;
-}
-
-.tally-embed iframe {
-  display: block;
-  border: none;
-}
-
 /* ---------- footer ---------- */
 
 .site-footer {
-  position: relative;
-  z-index: 2;
   text-align: center;
   padding: 32px 24px 48px;
   font-weight: 700;
