@@ -3,103 +3,299 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Save the Date — Alex & Ali</title>
-<meta name="description" content="Alex & Ali are getting married! Join us in Köln or Puerto Escondido.">
+<title>Alex &amp; Ali — We're getting married in Puerto Escondido</title>
+<meta name="description" content="Alex &amp; Ali are getting married in Puerto Escondido, Mexico on Saturday 6 November 2027. There's also a smaller celebration in Köln, Germany on 24 July for family and friends who can't make the trip.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#12655C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800;900&family=Rubik:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="wrap nav-inner">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link" href="puerto.html">Puerto</a>
-    <a class="nav-link" href="cologne.html">Cologne</a>
-    <a class="nav-link" href="#faq">FAQ</a>
+<nav class="nav">
+  <a class="nav-logo" href="index.html">ali <span>&amp;</span> alex</a>
+  <div class="nav-links">
+    <a href="#schedule">schedule</a>
+    <a href="#travel">travel</a>
+    <a href="#koln">köln</a>
+    <a href="#faq">faq</a>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">We're getting married!</p>
-    <h1>Save the<br>Date</h1>
-    <div class="couple-photo">
-      <img src="alialex.avif" alt="Alex and Ali" width="480" height="480">
+<header>
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">You're invited</p>
+      <h1 class="title">we're getting married!</h1>
+      <p class="lede">
+        Come celebrate with us in our favorite place in the world.
+      </p>
     </div>
-    <p class="names">Alex &amp; Ali</p>
-    <p class="lede">
-      Two celebrations, one love story. Pick whichever is easiest for
-      you below to see the details.
-    </p>
+    <div class="hero-photo">
+      <img src="alialex.avif" alt="Alex and Ali">
+    </div>
   </div>
+
+  <dl class="facts">
+    <div class="facts-a"><dt>When</dt><dd>Fri 5 – Sun 7 Nov 2027</dd></div>
+    <div class="facts-b"><dt>Where</dt><dd>Puerto Escondido, Oaxaca, Mexico</dd></div>
+    <div class="facts-c"><dt>Vibe</dt><dd>Fun, chill, colorful, easy, festive</dd></div>
+  </dl>
 </header>
 
+<div class="band">
+  <div class="band-inner">
+    <div class="band-track">
+      <span>WE'RE GONNA HAVE A PARTY ✦ YOU'RE INVITED ✦ WEDDING ON THE BEACH ✦ </span>
+      <span>WE'RE GONNA HAVE A PARTY ✦ YOU'RE INVITED ✦ WEDDING ON THE BEACH ✦ </span>
+    </div>
+  </div>
+</div>
+
 <main>
-  <section class="locations wrap" id="locations">
-    <a class="location-card" href="puerto.html">
-      <div class="location-photo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="8" cy="10" r="1.8" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M2 16.5L8 12l4.5 3.5L16 12l6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>Photo coming soon</span>
-      </div>
-      <div class="location-body">
-        <p class="event-kicker">Celebration two</p>
-        <h2>Puerto Escondido</h2>
-        <p class="event-date">November 6th, 2027</p>
-        <p class="location-desc">Beach bash at our chosen home.</p>
-        <span class="location-link">View details →</span>
-      </div>
-    </a>
 
-    <a class="location-card" href="cologne.html">
-      <div class="location-photo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="8" cy="10" r="1.8" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M2 16.5L8 12l4.5 3.5L16 12l6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>Photo coming soon</span>
+  <!-- ============ SCHEDULE ============ -->
+  <section class="sec sec-cream" id="schedule">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Puerto Escondido · Mexico</p>
+        <h2 class="title">schedule</h2>
       </div>
-      <div class="location-body">
-        <p class="event-kicker">Celebration one</p>
-        <h2>Köln</h2>
-        <p class="event-date">July 3rd, 2027</p>
-        <p class="location-desc">Celebration in Alex's hometown.</p>
-        <span class="location-link">View details →</span>
-      </div>
-    </a>
-  </section>
 
-  <section class="faq wrap" id="faq">
-    <h2 class="section-title">FAQ</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>Do I have to attend both celebrations?</summary>
-        <p>Not at all! Come to whichever celebration is easiest for you — or both, if you're up for the adventure.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What should I wear?</summary>
-        <p>Dress code details are coming soon — check back closer to the date.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Where should I stay?</summary>
-        <p>Accommodation recommendations for both Köln and Puerto Escondido will be added soon.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Can I bring a plus-one?</summary>
-        <p>Plus-one details will be included with your invitation.</p>
-      </details>
+      <div class="sched">
+        <article class="sched-day sched-1">
+          <div class="sched-when">
+            <span class="sched-dow">Friday</span>
+            <span class="sched-date">Nov 5</span>
+            <span class="sched-time">Evening</span>
+          </div>
+          <div class="sched-what">
+            <h3 class="sched-name">Welcome Drinks</h3>
+          </div>
+        </article>
+
+        <article class="sched-day sched-2">
+          <div class="sched-when">
+            <span class="sched-dow">Saturday</span>
+            <span class="sched-date">Nov 6</span>
+            <span class="sched-time">4PM – late</span>
+          </div>
+          <div class="sched-what">
+            <h3 class="sched-name">Wedding Celebration</h3>
+            <p class="sched-desc">Ceremony followed by dinner, drinks and dancing.</p>
+            <p class="sched-note"><b>Dress code</b>Party vibes. Loud shirts and shorts encouraged for men. Fun dresses for women, no heels necessary.</p>
+          </div>
+        </article>
+
+        <article class="sched-day sched-3">
+          <div class="sched-when">
+            <span class="sched-dow">Sunday</span>
+            <span class="sched-date">Nov 7</span>
+            <span class="sched-time">2PM – sunset</span>
+          </div>
+          <div class="sched-what">
+            <h3 class="sched-name">Recovery Hangout</h3>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
+
+
+  <!-- ============ WHAT TO DO ============ -->
+  <section class="sec sec-cream" id="do">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="title">what to do in puerto</h2>
+      </div>
+
+      <div class="do-grid">
+        <article class="do-card do-1">
+          <span class="do-num">01</span>
+          <h3>Surf &amp; beach</h3>
+          <p>Puerto is famous for its waves. You have seven beaches to choose from.</p>
+        </article>
+        <article class="do-card do-2">
+          <span class="do-num">02</span>
+          <h3>Wellness</h3>
+          <p>Yoga, HIIT, volleyball, and climbing.</p>
+        </article>
+        <article class="do-card do-3">
+          <span class="do-num">03</span>
+          <h3>Eat</h3>
+          <p>All of the seafood. Some of our faves include La Mariinera, El Chebichero and Attaraya.</p>
+        </article>
+        <article class="do-card do-4">
+          <span class="do-num">04</span>
+          <h3>Nightlife</h3>
+          <p>Cheap beers on the esquina, fancy cocktails on a rooftop, or clubbing at Paraiso. You have lots of options.</p>
+        </article>
+        <article class="do-card do-5">
+          <span class="do-num">05</span>
+          <h3>Nature</h3>
+          <p>Whale season starts in November. You can take a morning boat ride to see dolphins and catch your own lunch.</p>
+        </article>
+      </div>
+
+      <p class="weather"><b>Weather</b> It's sunny and hot every day.</p>
+    </div>
+  </section>
+
+  <!-- ============ GETTING THERE ============ -->
+  <section class="sec sec-brick" id="travel">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="title">how to get there</h2>
+      </div>
+
+      <div class="routes">
+        <article class="route route-best">
+          <span class="route-tag">Recommended</span>
+          <div class="hop"><span>MEX</span><i>→</i><span>PXM</span></div>
+          <h3>Via Mexico City</h3>
+          <p>Fly into Mexico City, then take an inexpensive domestic flight with Volaris or Viva straight to Puerto Escondido.</p>
+        </article>
+        <article class="route route-alt">
+          <span class="route-tag">Also fine</span>
+          <div class="hop"><span>OAX</span><i>→</i><span>3h bus</span></div>
+          <h3>Via Oaxaca</h3>
+          <p>Fly into Oaxaca City and take a three-hour bus over the mountains. Longer, but you get to see Oaxaca.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHERE TO STAY ============ -->
+  <section class="sec sec-cream" id="stay">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Where to stay</p>
+        <h2 class="title">stay in la punta.</h2>
+      </div>
+
+      <div class="map-wrap">
+        <img src="map-wheretostay.png" alt="Map of Puerto Escondido: the airport sits northwest of town, and the recommended area to stay is circled at the south end of Playa Zicatela, by La Punta.">
+      </div>
+
+      <div class="stay">
+        <article class="stay-card stay-a">
+          <h3>We're blocking rooms</h3>
+          <p class="price">$100–150</p>
+          <p>Per room, per night, at an affordable hotel in La Punta. Let us know if you want one and we'll hold it for you.</p>
+        </article>
+        <article class="stay-card stay-b">
+          <h3>Getting to the party</h3>
+          <p>We're organizing transport from La Punta to the wedding venue, so you don't have to think about it — or drive.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE / AFTER ============ -->
+
+  <section class="bookend">
+    <div class="bookend-before">
+      <p class="eyebrow">Beforehand</p>
+      <h3>day of the dead in oaxaca</h3>
+      <p>
+        If you've got more time, we're celebrating Día de Muertos in Oaxaca the weekend
+        before the wedding. Hit us up if you're interested. Places book up fast and it
+        can get expensive.
+      </p>
+    </div>
+    <div class="bookend-after">
+      <p class="eyebrow">Afterwards</p>
+      <h3>stay in puerto with us!</h3>
+      <p>
+        We're planning to spend the rest of the year in Puerto Escondido. Stay and hang.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ KÖLN — the smaller, optional celebration ============ -->
+  <section class="sec sec-cream" id="koln">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">And also...</p>
+        <h2 class="title">celebration in germany</h2>
+        <p class="lede">
+          A smaller celebration in Alex's hometown for his family and friends in
+          Germany. If you're around, feel free to join, just let us know!
+        </p>
+      </div>
+
+      <article class="koln-card">
+        <div class="koln-card-head">
+          <span class="koln-place">köln</span>
+          <span class="koln-date">Sat · Jul 24 · 2027</span>
+        </div>
+        <dl class="koln-facts">
+          <div><dt>Venue</dt><dd>FR&Uuml;H Em Tattersall, K&ouml;ln Weidenpesch</dd></div>
+          <div><dt>Time</dt><dd>From 4PM</dd></div>
+          <div><dt>Dress</dt><dd>Casual</dd></div>
+          <div><dt>Civil ceremony</dt><dd>Exact time &amp; place tbd</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec sec-cream" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What you should know</p>
+        <h2 class="title">faq.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What should I wear?</summary>
+          <p>
+            Puerto is hot and humid, and the wedding will be on the beach, so it'd be
+            best to wear something light and breathable. This is not a formal affair, so
+            we want to encourage you to wear something fun, colorful and comfortable.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Where should I stay?</summary>
+          <p>
+            <strong>Puerto</strong> — we're holding rooms at an affordable hotel in
+            La Punta, $100–150 per room per night. Let us know and we'll hold one for
+            you. We're also organizing transport from La Punta to the venue.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need to rent a car?</summary>
+          <p>
+            Puerto is small and very walkable. It's easy and fairly cheap to get around
+            by taxi as well, so you won't need one (we never have one). However, if you
+            want to stay longer and/or explore, you could rent a scooter or a car. We
+            can help you pick the right shop.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Are kids allowed?</summary>
+          <p>
+            Yes, your kids are welcome!
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="site-footer">
-  <p>Can't wait to celebrate with you 🎉 — Alex &amp; Ali</p>
+<footer class="foot">
+  <p>Can't wait to celebrate with you! Ali &amp; Alex</p>
 </footer>
 
 </body>

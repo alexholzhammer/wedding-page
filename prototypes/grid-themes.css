@@ -1,0 +1,343 @@
+/* ============================================================
+   Garden Grid — three Oaxacan colorways
+   One layout (.vg), three palettes (.tA / .tB / .tC).
+   Type: Gabarito (display, lowercase) + Rubik (banderole, labels).
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: #101010;
+  color: #111;
+  font-family: 'Gabarito', system-ui, sans-serif;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+
+/* ---------- preview chrome ---------- */
+
+.page-head, .page-foot {
+  padding: 64px 32px 40px;
+  max-width: 820px;
+  margin: 0 auto;
+  color: #f2f2f2;
+}
+.page-head h1 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 900;
+  font-size: clamp(30px, 5vw, 48px);
+  letter-spacing: -0.035em;
+  margin: 0 0 14px;
+}
+.page-head p, .page-foot p {
+  font-size: 16px; line-height: 1.65; color: #a5a5a5; margin: 0;
+}
+.page-head em { color: #d8d8d8; font-style: italic; }
+.page-foot { padding-block: 44px 90px; text-align: center; }
+
+.spec {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px;
+  padding: 44px 32px 16px; max-width: 1240px; margin: 0 auto; color: #f2f2f2;
+}
+.spec-num  { font-family: 'Rubik', monospace; font-weight: 500; font-size: 13px; color: #767676; }
+.spec-name { font-family: 'Rubik', sans-serif; font-weight: 900; font-size: 20px; letter-spacing: -0.02em; }
+.spec-meta { font-family: 'Rubik', sans-serif; font-weight: 500; font-size: 12.5px; color: #8d8d8d; }
+
+.v { max-width: 1240px; margin: 0 auto 8px; overflow: hidden; position: relative; isolation: isolate; }
+
+
+/* ---------- tagged sticker slots ---------- */
+
+.slot {
+  width: var(--w); height: var(--h); flex: 0 0 auto;
+  transform: rotate(var(--rot, 0deg));
+  border: 2px dashed currentColor; border-radius: 12px;
+  display: grid; place-items: center; text-align: center;
+  font-family: 'Rubik', monospace; font-weight: 500;
+  font-size: 9px; line-height: 1.35; letter-spacing: 0.06em;
+  text-transform: uppercase; opacity: 0.55; pointer-events: none;
+}
+
+
+/* ---------- marquee ---------- */
+
+.g-track { display: flex; width: max-content; animation: marquee 26s linear infinite; }
+.g-track-slow { animation-duration: 34s; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .g-track { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+
+/* ============================================================
+   LAYOUT  (shared by all three themes)
+   ============================================================ */
+
+.vg {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Gabarito', sans-serif;
+}
+
+/* thin top ticker */
+.g-ticker {
+  background: var(--ticker);
+  color: var(--tickerInk);
+  border-bottom: 3px solid var(--ink);
+  overflow: hidden;
+  padding: 7px 0;
+}
+.g-ticker span {
+  font-family: 'Rubik', sans-serif; font-weight: 700;
+  padding-right: 34px; font-size: 11.5px;
+  letter-spacing: 0.14em; white-space: nowrap;
+}
+
+/* nav bar */
+.g-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+  padding: 14px clamp(18px, 3vw, 34px);
+  background: var(--bg);
+  border-bottom: 3px solid var(--ink);
+}
+.g-logo { font-weight: 900; font-size: clamp(20px, 2.6vw, 26px); letter-spacing: -0.02em; color: var(--logo); }
+.g-logo span { color: var(--accent); }
+.g-nav { display: flex; align-items: center; gap: 18px; font-weight: 700; font-size: 14.5px; }
+.g-nav a { padding-bottom: 2px; border-bottom: 2.5px solid transparent; transition: border-color 0.15s ease; }
+.g-nav a:hover { border-color: var(--accent); }
+.g-nav a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.g-nav-btn {
+  background: var(--accent); color: var(--accentInk);
+  border: 2.5px solid var(--ink) !important; border-radius: 999px;
+  padding: 6px 20px 7px; box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.g-nav-btn:hover { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--ink); }
+
+/* greca — step-fret band from the Mitla ruins */
+.g-greca {
+  height: 22px;
+  background-color: var(--greca);
+  border-bottom: 3px solid var(--ink);
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M0 18H6V12H12V6H18V12H24V18' fill='none' stroke='black' stroke-width='3.5'/></svg>");
+          mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M0 18H6V12H12V6H18V12H24V18' fill='none' stroke='black' stroke-width='3.5'/></svg>");
+  -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+  -webkit-mask-size: 24px 22px; mask-size: 24px 22px;
+  -webkit-mask-position: center; mask-position: center;
+}
+
+/* split hero */
+.g-split { display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: stretch; }
+
+.g-copy {
+  position: relative;
+  background-color: var(--panel);
+  background-image: repeating-linear-gradient(45deg,
+    transparent 0 11px, rgba(255,255,255,0.07) 11px 22px);
+  color: var(--panelInk);
+  padding: clamp(30px, 4vw, 56px) clamp(22px, 3.4vw, 48px);
+  border-right: 3px solid var(--ink);
+}
+.g-kicker {
+  font-family: 'Rubik', sans-serif; font-weight: 700;
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+  opacity: 0.78; margin: 0 0 14px;
+}
+.g-copy h2 {
+  font-size: clamp(31px, 5.4vw, 64px); font-weight: 900;
+  line-height: 0.98; letter-spacing: -0.03em; margin: 0 0 18px;
+  text-wrap: balance;
+}
+.g-sub {
+  font-size: clamp(14px, 1.6vw, 17.5px); font-weight: 500;
+  line-height: 1.5; max-width: 38ch; margin: 0; opacity: 0.92;
+}
+.g-copy .slot { margin-top: 28px; color: var(--panelInk); }
+
+.g-photo {
+  position: relative;
+  background-color: var(--photoBg);
+  background-image: radial-gradient(rgba(0,0,0,0.20) 2px, transparent 2px);
+  background-size: 15px 15px;
+  padding: clamp(20px, 3vw, 40px);
+  display: grid; place-items: center;
+}
+.g-photo > img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border: 3px solid var(--ink); border-radius: 16px;
+  box-shadow: 7px 7px 0 var(--ink);
+  transform: rotate(-3deg);
+  transition: transform 0.25s ease;
+}
+.g-photo > img:hover { transform: rotate(1deg) scale(1.02); }
+.g-slot { position: absolute; right: 8%; top: 9%; color: var(--ink); }
+
+/* the banderole — tilted, striped, moving */
+.g-banderole {
+  position: relative; z-index: 2;
+  padding: 0;
+  overflow: hidden;
+}
+/* flush against the dates: the band's own bottom rule is the divider */
+.g-banderole + .g-dates { border-top: 0; }
+.g-band-inner {
+  width: 100%;
+  background-color: var(--band);
+  background-image: repeating-linear-gradient(-45deg,
+    transparent 0 13px, rgba(0,0,0,0.11) 13px 26px);
+  border-top: 4px solid var(--ink);
+  border-bottom: 4px solid var(--ink);
+  padding: 12px 0;
+  overflow: hidden;
+}
+.g-band-inner span {
+  font-family: 'Rubik', sans-serif; font-weight: 900;
+  color: var(--bandInk);
+  font-size: clamp(20px, 3.2vw, 36px);
+  letter-spacing: -0.015em; white-space: nowrap; padding-right: 26px;
+}
+
+/* the two dates */
+.g-dates { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink); }
+.g-date {
+  padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 38px);
+  display: block; transition: filter 0.2s ease;
+}
+.g-date:focus-visible { outline: 4px solid var(--ink); outline-offset: -8px; }
+.g-date-a {
+  background: var(--dateA); color: var(--dateAInk);
+  border-right: 3px solid var(--ink);
+  --ghostInk: var(--dateAInk); --ghostFill: var(--dateA);
+}
+.g-date-b {
+  background: var(--dateB); color: var(--dateBInk);
+  --ghostInk: var(--dateBInk); --ghostFill: var(--dateB);
+}
+.g-date:hover { filter: brightness(1.07); }
+/* location leads, at display scale */
+.g-place {
+  display: block; font-size: clamp(30px, 5vw, 58px); font-weight: 900;
+  line-height: 0.94; letter-spacing: -0.035em;
+}
+/* date sits under it, ticket-stub style */
+.g-when {
+  display: block; font-family: 'Rubik', sans-serif; font-weight: 800;
+  font-size: clamp(15px, 1.9vw, 21px); letter-spacing: 0.015em;
+  font-variant-numeric: tabular-nums; margin-top: 12px;
+}
+.g-note {
+  display: block; font-family: 'Rubik', sans-serif; font-weight: 700;
+  font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase;
+  opacity: 0.82; margin-top: 8px;
+}
+.g-ghost {
+  display: inline-block; margin-top: 20px;
+  font-family: 'Rubik', sans-serif; font-weight: 800;
+  font-size: 13.5px; letter-spacing: 0.04em;
+  padding: 9px 22px; border-radius: 999px;
+  background: transparent;
+  color: var(--ghostInk);
+  border: 2.5px solid var(--ghostInk);
+  transition: background 0.16s ease, color 0.16s ease;
+}
+.g-date:hover .g-ghost,
+.g-date:focus-visible .g-ghost {
+  background: var(--ghostInk);
+  color: var(--ghostFill);
+}
+
+/* closing wave */
+.g-wave { display: block; width: 100%; height: 64px; background: var(--ink); }
+.g-wave path { fill: var(--bg); }
+
+
+/* ============================================================
+   THEME A · ALEBRIJE  — cobalt / turquoise / magenta / marigold
+   ============================================================ */
+.tA {
+  --ink:       #16110F;
+  --bg:        #FFF4E0;
+  --panel:     #2547B8;
+  --panelInk:  #FFF4E0;
+  --photoBg:   #00A6A6;
+  --dateA:     #FFB627;  --dateAInk: #16110F;
+  --dateB:     #E5195F;  --dateBInk: #FFF4E0;
+  --band:      #FFB627;  --bandInk:  #16110F;
+  --ticker:    #E5195F;  --tickerInk:#FFF4E0;
+  --accent:    #E5195F;  --accentInk:#FFF4E0;
+  --logo:      #2547B8;
+  --greca:     #00A6A6;
+}
+
+/* ============================================================
+   THEME B · MERCADO — deep teal / brick / mustard / rosa
+   ============================================================ */
+.tB {
+  --ink:       #1A120E;
+  --bg:        #F7EBD5;
+  --panel:     #12655C;
+  --panelInk:  #F7EBD5;
+  --photoBg:   #F2B33D;
+  --dateA:     #D6452B;  --dateAInk: #F7EBD5;
+  --dateB:     #EE5D8F;  --dateBInk: #1A120E;
+  --band:      #6A3FA0;  --bandInk:  #F7EBD5;
+  --ticker:    #12655C;  --tickerInk:#F7EBD5;
+  --accent:    #D6452B;  --accentInk:#F7EBD5;
+  --logo:      #12655C;
+  --greca:     #D6452B;
+}
+
+/* ============================================================
+   THEME C · CEMPASÚCHIL — morado / marigold / verde / rosa
+   ============================================================ */
+.tC {
+  --ink:       #17110E;
+  --bg:        #FFF1DC;
+  --panel:     #5B2A86;
+  --panelInk:  #FFF1DC;
+  --photoBg:   #9BCB3B;
+  --dateA:     #FF8A1E;  --dateAInk: #17110E;
+  --dateB:     #FF3D77;  --dateBInk: #17110E;
+  --band:      #FF8A1E;  --bandInk:  #17110E;
+  --ticker:    #5B2A86;  --tickerInk:#FFF1DC;
+  --accent:    #FF3D77;  --accentInk:#17110E;
+  --logo:      #5B2A86;
+  --greca:     #FF8A1E;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 820px) {
+  .g-split { grid-template-columns: 1fr; }
+  .g-copy { border-right: 0; border-bottom: 3px solid var(--ink); }
+  .g-dates { grid-template-columns: 1fr; }
+  .g-date-a { border-right: 0; border-bottom: 3px solid var(--ink); }
+}
+
+@media (max-width: 560px) {
+  .g-bar { justify-content: center; }
+  .g-nav { gap: 14px; font-size: 13.5px; }
+  .g-slot { right: 4%; top: 4%; }
+}
+
+
+/* ---------- banderole colour alternates (preview only) ---------- */
+.bd-anil  { --band: #27407F; --bandInk: #F7EBD5; }
+.bd-morado{ --band: #6A3FA0; --bandInk: #F7EBD5; }
+.bd-maya  { --band: #2E86AB; --bandInk: #F7EBD5; }
+.bd-guinda{ --band: #7B2D3B; --bandInk: #F7EBD5; }
+.bd-label {
+  font-family: 'Rubik', sans-serif; font-weight: 700; font-size: 12px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #8d8d8d; margin: 0 0 8px; padding-left: clamp(18px, 3vw, 34px);
+}
+.bd-alt { background: var(--bg); }
