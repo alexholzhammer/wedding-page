@@ -160,16 +160,11 @@ h1, h2 {
 /* ---------- locations ---------- */
 
 .locations {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   padding: 24px 24px 56px;
-}
-
-@media (min-width: 640px) {
-  .locations {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .location-card {
@@ -179,14 +174,12 @@ h1, h2 {
   border-radius: 24px;
   overflow: hidden;
   text-align: center;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+  max-width: 420px;
 }
 
-.location-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 0 var(--cream-deep);
+.location-card--primary {
+  max-width: 480px;
 }
 
 .location-photo {
@@ -241,13 +234,23 @@ h1, h2 {
 
 .location-desc {
   font-weight: 600;
-  margin: 0 0 16px;
+  margin: 0;
 }
 
-.location-link {
-  display: inline-block;
-  font-weight: 800;
-  color: var(--brown);
+.germany-note {
+  max-width: 420px;
+  width: 100%;
+  border: 2px dashed var(--brown);
+  border-radius: 16px;
+  padding: 14px 20px;
+  background: var(--cream-deep);
+}
+
+.germany-note p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brown-dark);
 }
 
 /* ---------- faq ---------- */
