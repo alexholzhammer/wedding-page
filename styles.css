@@ -1,15 +1,9 @@
 :root {
-  --bg-deep: #150826;
-  --bg-mid: #241041;
-  --bg-panel: #1a0c30;
-  --pink: #ff2d95;
-  --cyan: #05d9e8;
-  --purple: #a239ff;
-  --yellow: #ffde59;
-  --orange: #ff9f1c;
-  --green: #39ff88;
-  --white: #fdf9ff;
-  --font-display: "Bungee", sans-serif;
+  --cream: #f7f7f4;
+  --cream-deep: #eae9e4;
+  --brown: #8a5a3b;
+  --brown-dark: #5f3d27;
+  --font-display: "Bricolage Grotesque", sans-serif;
   --max-width: 780px;
 }
 
@@ -23,9 +17,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg-deep);
-  color: var(--white);
-  font-family: "Space Grotesk", sans-serif;
+  background: var(--cream);
+  color: var(--brown-dark);
+  font-family: "Nunito", sans-serif;
   font-size: 18px;
   line-height: 1.6;
   overflow-x: hidden;
@@ -33,7 +27,7 @@ body {
 
 h1, h2 {
   font-family: var(--font-display);
-  color: var(--white);
+  color: var(--brown);
   margin: 0;
 }
 
@@ -46,8 +40,8 @@ h1, h2 {
 /* ---------- nav ---------- */
 
 .site-nav {
-  background: var(--bg-mid);
-  border-bottom: 2px solid var(--pink);
+  background: var(--cream-deep);
+  border-bottom: 2px solid var(--brown);
 }
 
 .nav-inner {
@@ -61,14 +55,14 @@ h1, h2 {
 .nav-link {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--cyan);
+  color: var(--brown-dark);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   white-space: nowrap;
 }
 
 .nav-link:hover {
-  color: var(--pink);
+  color: var(--brown);
   text-decoration: underline;
 }
 
@@ -84,7 +78,7 @@ h1, h2 {
   display: inline-block;
   margin-bottom: 16px;
   font-weight: 700;
-  color: var(--cyan);
+  color: var(--brown);
   text-decoration: none;
 }
 
@@ -96,19 +90,15 @@ h1, h2 {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--brown);
   font-size: 0.85rem;
   margin: 0 0 8px;
-  text-shadow: 0 0 8px rgba(255, 222, 89, 0.6);
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 12vw, 4.6rem);
+  font-size: clamp(3rem, 12vw, 5.2rem);
   line-height: 1;
-  text-shadow:
-    2px 2px 0 var(--pink),
-    4px 4px 0 var(--purple),
-    6px 6px 0 var(--cyan);
+  font-weight: 700;
 }
 
 .couple-photo {
@@ -117,9 +107,8 @@ h1, h2 {
   margin: 28px auto;
   border-radius: 20px;
   overflow: hidden;
-  border: 4px solid var(--cyan);
-  background: var(--bg-mid);
-  box-shadow: 0 0 30px rgba(5, 217, 232, 0.45);
+  border: 3px solid var(--brown);
+  background: var(--cream-deep);
 }
 
 .couple-photo img {
@@ -131,43 +120,41 @@ h1, h2 {
 
 .names {
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
-  color: var(--yellow);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  color: var(--brown-dark);
   margin: 14px 0 20px;
-  text-shadow: 0 0 10px rgba(255, 222, 89, 0.6);
+  font-weight: 600;
 }
 
 .lede {
   max-width: 520px;
   margin: 0 auto 28px;
-  font-weight: 500;
-  opacity: 0.9;
+  font-weight: 600;
 }
 
 .btn {
   display: inline-block;
-  font-family: var(--font-display);
-  background: linear-gradient(90deg, var(--cyan), var(--pink));
-  color: var(--bg-deep);
+  background: var(--brown);
+  color: var(--cream);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
   padding: 14px 36px;
   border-radius: 999px;
-  border: 3px solid var(--white);
-  box-shadow: 5px 5px 0 var(--purple);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 4px 0 var(--brown-dark);
+  transition: transform 0.15s ease;
+  font-family: inherit;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 var(--purple);
+  transform: translateY(-2px);
 }
 
 .btn:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--purple);
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--brown-dark);
 }
 
 /* ---------- locations ---------- */
@@ -176,21 +163,19 @@ h1, h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   padding: 24px 24px 56px;
 }
 
 .location-card {
-  position: relative;
   display: block;
-  background: var(--bg-panel);
-  border: 2px solid var(--cyan);
+  background: #fff;
+  border: 3px solid var(--brown);
   border-radius: 24px;
   overflow: hidden;
   text-align: center;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 0 24px rgba(5, 217, 232, 0.18);
 }
 
 .location-card--primary {
@@ -199,15 +184,15 @@ h1, h2 {
 
 .location-photo {
   aspect-ratio: 16 / 10;
-  background: var(--bg-mid);
-  border-bottom: 2px solid var(--cyan);
+  background: var(--cream-deep);
+  border-bottom: 3px solid var(--brown);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: var(--cyan);
-  opacity: 0.75;
+  color: var(--brown);
+  opacity: 0.6;
 }
 
 .location-photo svg {
@@ -223,60 +208,49 @@ h1, h2 {
 }
 
 .location-body {
-  padding: 28px 26px 30px;
+  padding: 24px 26px 28px;
 }
 
 .event-kicker {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.7rem;
-  color: var(--white);
-  background: var(--pink);
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin: 0 0 14px;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  color: var(--brown);
+  margin: 0 0 6px;
+  opacity: 0.7;
 }
 
 .location-body h2 {
-  font-size: 1.7rem;
-  margin-bottom: 6px;
+  font-size: 1.8rem;
+  margin-bottom: 4px;
 }
 
 .event-date {
-  font-family: "Share Tech Mono", monospace;
-  font-weight: 700;
-  color: var(--yellow);
+  font-weight: 800;
+  color: var(--brown-dark);
   margin: 0 0 12px;
-  letter-spacing: 0.04em;
 }
 
 .location-desc {
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
-  opacity: 0.9;
 }
 
 .germany-note {
   max-width: 420px;
   width: 100%;
-  border: 2px dashed var(--yellow);
+  border: 2px dashed var(--brown);
   border-radius: 16px;
-  padding: 16px 20px;
-  background: rgba(20, 8, 38, 0.6);
+  padding: 14px 20px;
+  background: var(--cream-deep);
 }
 
 .germany-note p {
   margin: 0;
   font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--white);
-}
-
-.germany-note strong {
-  color: var(--yellow);
+  font-weight: 600;
+  color: var(--brown-dark);
 }
 
 /* ---------- faq ---------- */
@@ -289,7 +263,6 @@ h1, h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 32px;
-  text-shadow: 2px 2px 0 var(--purple);
 }
 
 .faq-list {
@@ -298,8 +271,7 @@ h1, h2 {
 }
 
 .faq-item {
-  background: var(--bg-panel);
-  border: 1px solid var(--bg-mid);
+  background: var(--cream-deep);
   border-radius: 18px;
   padding: 18px 22px;
 }
@@ -307,14 +279,13 @@ h1, h2 {
 .faq-item summary {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--cyan);
+  color: var(--brown);
   cursor: pointer;
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  font-size: 0.9rem;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -326,7 +297,6 @@ h1, h2 {
   font-size: 1.4rem;
   line-height: 1;
   flex-shrink: 0;
-  color: var(--pink);
   transition: transform 0.15s ease;
 }
 
@@ -336,8 +306,7 @@ h1, h2 {
 
 .faq-item p {
   margin: 12px 0 0;
-  font-weight: 500;
-  opacity: 0.9;
+  font-weight: 600;
 }
 
 /* ---------- rsvp form ---------- */
@@ -347,8 +316,8 @@ h1, h2 {
 }
 
 .form-card {
-  background: var(--bg-panel);
-  border: 2px solid var(--cyan);
+  background: #fff;
+  border: 3px solid var(--brown);
   border-radius: 24px;
   padding: 32px 26px;
   text-align: left;
@@ -370,7 +339,7 @@ h1, h2 {
 .field label,
 .field-label {
   font-weight: 700;
-  color: var(--white);
+  color: var(--brown-dark);
   margin: 0;
 }
 
@@ -380,18 +349,18 @@ h1, h2 {
   width: 100%;
   padding: 12px 14px;
   border-radius: 12px;
-  border: 2px solid var(--bg-mid);
-  background: var(--bg-deep);
+  border: 2px solid var(--cream-deep);
+  background: var(--cream);
   font-family: inherit;
   font-size: 1rem;
-  color: var(--white);
+  color: var(--brown-dark);
 }
 
 .field input[type="text"]:focus,
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--cyan);
+  border-color: var(--brown);
 }
 
 .field textarea {
@@ -417,7 +386,7 @@ h1, h2 {
   right: 18px;
   width: 9px;
   height: 9px;
-  border: solid var(--cyan);
+  border: solid var(--brown);
   border-width: 0 2px 2px 0;
   transform: translateY(-70%) rotate(45deg);
   pointer-events: none;
@@ -428,7 +397,7 @@ h1, h2 {
   align-items: flex-start;
   gap: 10px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--brown-dark);
   cursor: pointer;
 }
 
@@ -441,8 +410,8 @@ input[type="radio"] {
   width: 22px;
   height: 22px;
   margin: 0;
-  border: 2px solid var(--cyan);
-  background: var(--bg-deep);
+  border: 2px solid var(--brown);
+  background: var(--cream);
   cursor: pointer;
   position: relative;
 }
@@ -452,7 +421,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background: var(--cyan);
+  background: var(--brown);
 }
 
 input[type="checkbox"]:checked::after {
@@ -462,7 +431,7 @@ input[type="checkbox"]:checked::after {
   top: 2px;
   width: 6px;
   height: 11px;
-  border: solid var(--bg-deep);
+  border: solid var(--cream);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -479,15 +448,15 @@ input[type="radio"]:checked::after {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--cyan);
+  background: var(--brown);
   transform: translate(-50%, -50%);
 }
 
 .section-heading {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--cyan);
-  font-size: 1.1rem;
+  color: var(--brown);
+  font-size: 1.2rem;
   margin: 0;
 }
 
@@ -507,10 +476,10 @@ fieldset.field {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  background: var(--bg-mid);
+  background: var(--cream-deep);
   padding: 12px 14px;
   border-radius: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -526,11 +495,11 @@ fieldset.field {
 }
 
 .form-status.success {
-  color: var(--green);
+  color: #3f7d4f;
 }
 
 .form-status.error {
-  color: var(--pink);
+  color: #b0413e;
 }
 
 /* ---------- footer ---------- */
@@ -539,5 +508,5 @@ fieldset.field {
   text-align: center;
   padding: 32px 24px 48px;
   font-weight: 700;
-  color: var(--cyan);
+  color: var(--brown);
 }
