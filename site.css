@@ -1,5 +1,5 @@
 /* ============================================================
-   Alex & Ali — losalexes.com
+   Ali & Alex — losalexes.com
    Mercado design system. This is the real site stylesheet.
    (grid-themes.css / headers.css are prototypes — do not load them here.)
    ============================================================ */
@@ -136,6 +136,24 @@ a { color: inherit; text-decoration: none; }
 .nav-links a { padding-bottom: 2px; border-bottom: 2.5px solid transparent; transition: border-color 0.15s ease; }
 .nav-links a:hover { border-color: var(--brick); }
 .nav-links a[aria-current="page"] { border-color: var(--rosa); }
+
+/* ---------- language switcher (lives in the nav row) ---------- */
+
+.nav-langs {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding-left: 15px; margin-left: 3px;
+  border-left: 2.5px solid rgba(26, 18, 14, 0.22);
+}
+.nav-langs a {
+  font-family: 'Rubik', sans-serif; font-weight: 800;
+  font-size: 12px; letter-spacing: 0.05em;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.nav-langs a[aria-current="page"] { cursor: default; }
+
+@media (max-width: 640px) {
+  .nav-langs { border-left: 0; padding-left: 0; margin-left: 0; }
+}
 
 /* ============================================================
    HERO
@@ -286,9 +304,10 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.55;
 }
 
-/* --- transport --- */
+/* --- transport / place cards --- */
 
 .routes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 20px); }
+.routes + .routes { margin-top: clamp(14px, 2vw, 20px); }
 .route {
   border: var(--rule); border-radius: 18px; background: var(--cream); color: var(--ink);
   box-shadow: 5px 5px 0 var(--ink); padding: clamp(20px, 2.4vw, 30px);
@@ -308,6 +327,16 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.06em; margin-bottom: 12px;
 }
 .hop i { font-style: normal; opacity: 0.5; }
+
+/* --- plain callout cards (planning help, safety, etc.) --- */
+
+.callouts { display: grid; gap: clamp(14px, 2vw, 20px); margin-top: clamp(16px, 2vw, 24px); }
+.callout {
+  border: var(--rule); border-radius: 18px; background: var(--cream); color: var(--ink);
+  box-shadow: 5px 5px 0 var(--ink); padding: clamp(20px, 2.4vw, 30px);
+}
+.callout h3 { font-weight: 900; font-size: clamp(18px, 2.2vw, 24px); letter-spacing: -0.025em; margin: 0 0 8px; }
+.callout p { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.6; }
 
 /* --- map --- */
 

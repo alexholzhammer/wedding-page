@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alex &amp; Ali — We're getting married in Puerto Escondido</title>
-<meta name="description" content="Alex &amp; Ali are getting married in Puerto Escondido, Mexico on Saturday 6 November 2027. There's also a smaller celebration in Köln, Germany on 24 July for family and friends who can't make the trip.">
+<title>Ali &amp; Alex Wedding</title>
+<meta name="description" content="Ali &amp; Alex are getting married in Puerto Escondido, Mexico on Saturday 6 November 2027. There's also a smaller celebration in Köln, Germany on 24 July for family and friends who can't make the trip.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#12655C">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="de" href="de.html">
+<link rel="alternate" hreflang="x-default" href="index.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800;900&family=Rubik:wght@500;700;800;900&display=swap" rel="stylesheet">
@@ -25,6 +28,10 @@
     <a href="#travel">travel</a>
     <a href="#koln">köln</a>
     <a href="#faq">faq</a>
+    <span class="nav-langs">
+      <a href="index.html" aria-current="page">🇬🇧&nbsp;ENG</a>
+      <a href="de.html">🇩🇪&nbsp;GER</a>
+    </span>
   </div>
 </nav>
 
@@ -38,7 +45,7 @@
       </p>
     </div>
     <div class="hero-photo">
-      <img src="alialex.avif" alt="Alex and Ali">
+      <img src="alialex.avif" alt="Ali and Alex">
     </div>
   </div>
 
@@ -113,6 +120,12 @@
     <div class="wrap">
       <div class="sec-head">
         <h2 class="title">what to do in puerto</h2>
+        <p class="lede">
+          Puerto is a tourist beach town that is famous for its beaches, surf,
+          nightlife and community of Mexicans and international visitors. You'll
+          mostly wear flip flops and a bikini or swim trunks. Most things happen
+          outside in the sand.
+        </p>
       </div>
 
       <div class="do-grid">
@@ -123,8 +136,8 @@
         </article>
         <article class="do-card do-2">
           <span class="do-num">02</span>
-          <h3>Wellness</h3>
-          <p>Yoga, HIIT, volleyball, and climbing.</p>
+          <h3>Wellness &amp; Sport</h3>
+          <p>This is a very active place. You find everything from yoga and HIIT classes to beach volleyball and much more.</p>
         </article>
         <article class="do-card do-3">
           <span class="do-num">03</span>
@@ -143,7 +156,57 @@
         </article>
       </div>
 
-      <p class="weather"><b>Weather</b> It's sunny and hot every day.</p>
+      <p class="weather"><b>Weather</b> It's sunny and hot every day, around 83–88°F.</p>
+
+      <div class="callouts">
+        <article class="callout">
+          <h3>Is Puerto safe?</h3>
+          <p>It's a tourist town for locals and international visitors alike, and generally a very safe place. Mugging and pickpocketing are incredibly rare here. That said, like in any tourist destination, use the usual amount of caution and common sense.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEYOND PUERTO ============ -->
+  <section class="sec sec-cream" id="beyond">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Got extra days?</p>
+        <h2 class="title">beyond puerto</h2>
+      </div>
+
+      <div class="routes">
+        <article class="route route-best">
+          <span class="route-tag">3-hour drive or bus</span>
+          <h3>Oaxaca City</h3>
+          <p>One of our favorite food cities in the world, with beautiful architecture and tons of art. If you haven't been yet, you have to.</p>
+        </article>
+        <article class="route route-alt">
+          <span class="route-tag">1-hour flight</span>
+          <h3>Mexico City</h3>
+          <p>Maybe our favorite city in the world. Vibrant, fun, historic, artistic. There's more to do than you could ever get through.</p>
+        </article>
+      </div>
+
+      <div class="routes">
+        <article class="route route-best">
+          <span class="route-tag">Worth the drive</span>
+          <h3>Road trips</h3>
+          <p>San José del Pacífico, a cute mountain town. Chacahua, a lagoon village. Mazunte, a hippie beach.</p>
+        </article>
+        <article class="route route-alt">
+          <span class="route-tag">Short flight</span>
+          <h3>A little further</h3>
+          <p>San Cristóbal de las Casas for all the nature. Mérida for colonial streets, incredible Yucatán food, and cenotes and Maya ruins nearby. And plenty more.</p>
+        </article>
+      </div>
+
+      <div class="callouts">
+        <article class="callout">
+          <h3>Planning your trip?</h3>
+          <p>Want a hand mapping it all out? Just ask us.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -297,6 +360,18 @@
 <footer class="foot">
   <p>Can't wait to celebrate with you! Ali &amp; Alex</p>
 </footer>
+
+<script>
+  /* carry the current section across a language switch */
+  for (const a of document.querySelectorAll('.nav-langs a[href]')) {
+    a.addEventListener('click', function (e) {
+      if (location.hash && !this.hasAttribute('aria-current')) {
+        e.preventDefault();
+        location.assign(this.getAttribute('href') + location.hash);
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
