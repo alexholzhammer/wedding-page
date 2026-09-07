@@ -320,7 +320,7 @@ a { color: inherit; text-decoration: none; }
 }
 .route-best .route-tag { background: var(--mustard); }
 .route-alt .route-tag { background: var(--cream); }
-.route-icon { display: block; font-size: 26px; line-height: 1; margin-bottom: 10px; }
+.route-icon { display: block; width: 34px; height: 34px; margin-bottom: 8px; }
 .route h3 { font-weight: 900; font-size: clamp(19px, 2.3vw, 26px); letter-spacing: -0.025em; margin: 0 0 8px; }
 .route p { margin: 0; font-size: 14.5px; font-weight: 500; line-height: 1.55; }
 .hop {
